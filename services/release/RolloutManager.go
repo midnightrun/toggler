@@ -16,7 +16,7 @@ func NewRolloutManager(s Storage) *RolloutManager {
 	}
 }
 
-// RolloutManager provides you with feature flag configurability.
+// RolloutManager provides you with release flag configurability.
 // The manager use storage in a write heavy behavior.
 //
 // SRP: release manager

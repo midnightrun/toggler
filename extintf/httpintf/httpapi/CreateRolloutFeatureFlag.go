@@ -9,7 +9,7 @@ import (
 	"github.com/toggler-io/toggler/usecases"
 )
 
-// CreateRolloutFeatureFlagJSONParameters is the request object for creating feature flags.
+// CreateRolloutFeatureFlagJSONParameters is the request object for creating release flags.
 // swagger:parameters CreateRolloutFeatureFlag
 type CreateRolloutFeatureFlagJSONParameters struct {
 	// in: body
@@ -25,11 +25,11 @@ type CreateRolloutFeatureFlagResponse struct {
 
 /*
 
-	swagger:route POST /rollout/flag/create.json rollout feature-flag CreateRolloutFeatureFlag
+	swagger:route POST /rollout/flag/create.json rollout feature-flag CreateReleaseFlag
 
-	Create FlagRollout Feature Flag
+	Create release Flag
 
-	This operation allows you to create a new rollout feature flag.
+	This operation allows you to create a new release flag.
 
 		Consumes:
 		- application/json

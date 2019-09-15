@@ -11,13 +11,13 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// RolloutClientConfigResponseBody RolloutClientConfigResponseBody will contain the requested feature flag states for a certain pilot.
+// RolloutClientConfigResponseBody RolloutClientConfigResponseBody will contain the requested release flag states for a certain pilot.
 //
 // The content expected to be cached in some form of state container.
 // swagger:model RolloutClientConfigResponseBody
 type RolloutClientConfigResponseBody struct {
 
-	// States holds the requested rollout feature flag enrollment statuses.
+	// States holds the requested release flag enrollment statuses.
 	States map[string]bool `json:"states,omitempty"`
 }
 

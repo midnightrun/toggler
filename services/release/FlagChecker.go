@@ -17,7 +17,7 @@ func NewFlagChecker(s Storage) *FlagChecker {
 	}
 }
 
-// FlagChecker is an interactor that implements query like (read only) behaviors with feature flags.
+// FlagChecker is an interactor that implements query like (read only) behaviors with release flags.
 type FlagChecker struct {
 	Storage                Storage
 	IDPercentageCalculator func(string, int64) (int, error)
@@ -25,7 +25,7 @@ type FlagChecker struct {
 }
 
 // IsFeatureEnabledFor grant you the ability to
-// check whether a pilot is enrolled or not for the feature flag in subject.
+// check whether a pilot is enrolled or not for the release flag in subject.
 func (checker *FlagChecker) IsFeatureEnabledFor(featureFlagName string, externalPilotID string) (bool, error) {
 
 	ff, err := checker.Storage.FindReleaseFlagByName(context.TODO(), featureFlagName)

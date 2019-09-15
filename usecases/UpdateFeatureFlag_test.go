@@ -18,7 +18,7 @@ func TestUseCases_UpdateFeatureFlag(t *testing.T) {
 		return GetProtectedUsecases(t).UpdateFeatureFlag(context.TODO(), GetReleaseFlag(t))
 	}
 
-	s.Context(`Given the feature flag already exists`, func(s *testcase.Spec) {
+	s.Context(`Given the release flag already exists`, func(s *testcase.Spec) {
 		s.Before(func(t *testcase.T) {
 			require.Nil(t, GetProtectedUsecases(t).CreateFeatureFlag(context.TODO(), GetReleaseFlag(t)))
 		})

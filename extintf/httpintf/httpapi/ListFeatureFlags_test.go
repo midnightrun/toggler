@@ -72,7 +72,7 @@ func TestServeMux_ListFeatureFlags(t *testing.T) {
 			})
 		})
 
-		s.And(`feature flag is present in the system`, func(s *testcase.Spec) {
+		s.And(`release flag is present in the system`, func(s *testcase.Spec) {
 			s.Before(func(t *testcase.T) {
 				UpdateReleaseFlagRolloutPercentage(t, `a`, 10)
 			})

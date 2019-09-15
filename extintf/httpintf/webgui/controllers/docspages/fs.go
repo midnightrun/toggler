@@ -424,34 +424,39 @@ PhSFxFVvi7Ixr9oPQ5Lgq2hGuDL84PNkGlpJ/Pr/SC9o1cBf3w+Je/cXAAD//1QndS1RAQAA
 	"/docs/design/DirectoryLayout.md": {
 		name:    "DirectoryLayout.md",
 		local:   "/home/adamluzsi/src/github.com/toggler-io/toggler/docs/design/DirectoryLayout.md",
+<<<<<<< Updated upstream
 		size:    3939,
 		modtime: 1568556972,
+=======
+		size:    3937,
+		modtime: 1568556109,
+>>>>>>> Stashed changes
 		compressed: `
 H4sIAAAAAAAC/4xXz27cvhG+8ykG8OH3C7Bet0BOORQIUKD1oYABuyiKoogpaiSxS3EUDrnrvQV9Bh97
-yLPkUfwkxZCSVruWnexpJZLz9/u+Ea/gLtB/0ES4jyGZmAIq9UCQfI2Bo/Y1oGbrjnDodITGOoQKHfmW
-IRIcOgy4UUdKYLSHliAGSm0HsUOobUATKRzB6SOlCG2yNTrrcaMOnTUddOgGBnwanLaei4vTqYA8kGdb
-ORRfhnzU1uddW6UeHx/Vdqtenv/38vzt5fkbVNbDG7/rPwE+oUlRVw4ZGgoQqW0dBnBktIMa9+ho6NFH
-WJg0ff2OScawtwbBUD9YJ6bBOCuPvfY1q5fn//74/uM7vDw/j/Ymp69tdTEOS4NiYTYgv5ORXlu/bWkR
-Zk1mh+Fa4iDG7bF3S9MROVrf3kyZDuhr9MYin5tYPuJTtD42b9YyYvDagfURQ6MNQkCnI9Zg+8GhlFFH
-S35Zg8m0ZCq2F0trW/RgV0okb89drJi5rPo9hj3+LT1tWxpNTW9yAm3QEUE7l0E7eem0rx2Gn0SZonX8
-zp6Fa/V2gAes2mRfbShtn0xpZoz8k03CkUDOYfjZzvciO8fb3uJhDcwcKegWWa07sL7HXmh81kTrYXw9
-Hr9oZ+bm12TNbsItDCkIrPkNOgzEsQ3I537uprfrbs5sndu7qPP8u8i+t4Ibwbi4G1qoK2DTYa9PS1ku
-l7S6C2SyhK7SqsNAuzRjsoQ5HR21gd+Vot8YahJ9APTRRou8gZBE8kTIE6PRjLBCSsEMpcivLY8rM8FH
-+2/z/BVMBjT8llmeNW/WpeNvnM/YxpqxwGvgQ5OCjce1UowrFxHnOpza+ktRzrZ+IcpFrybkrvcqi6ao
-5wzwXbs8TOR4lKrXh2VVzuwxsCBsJDwcbOxk/PYkY2PKauz4G6CZJG9KbhbDWv4SkEeJLVMyYKNlKp8R
-8pw4uYRqjSv3hYP3AxqRG6U+/mEe8xmjf/z4ceSKTHV1dXU1TSD10FlefBPQwXMO+kI2ArY61BLdPJwC
-MqVgRvDPo4q36tZDJgI1oNeGmem0b3ED8dw3Pg1opDqRoELQTVMeybvjNkd9dZpuF3Evv2WknnTwEuxf
-Hx7uYAgUyZCDSjPWKwHxRnEyHWiGz3e3G/gHVn/5+y1QgJ68HbuykI0xmKtpmKlXo7PU8PPdLUT55tLO
-0YHl66WsUfGtTczAGnObBX/sJ2d0yCbNMKlOOMJA1sdllusaLI2I0GkGDQVcR+gxdlSXoOSDMmBMwedg
-h0ADhsu+l5JR2WLIezT5PUcpylyIaUioeVo0yTXWuVKIgF+TDWNlel0jVMdCjU4HrC+YvlWfS85aRP8i
-oEg5XbwJGIPFPUKtoy6BzCJ+iQ4jI9vE7LJKbD0yzxKe4Tu/TYzXmdNbJTjGPYaTPA27VlCLAeFgncso
-hcdMzEfgVOWG5eLW2Ii94hE7vbfyTSwrlk9AV02gPu9ZYdVSOhIjTBAdu71R2ZxHrHlkzFjzrC9AocaQ
-7xAUdnBAESNqUaIvapbZNwvv6tjZqn/9c7x6BNQ19BQQdCXzqrRVM3mZq/jv34UD/OnmBv32YHd2wNrq
-LYX2Rp5u/oxsW/+lOn7JiqpN/DBRehpVap5ZY7vmYeuotWau3pACutP4iXTQoeYJw0aaSE1pgJCjQS23
-Lmicbnmj0Iuc99on7dwRBuso8mbsV2mF7HD5qjJgMFKMtohKyZmj2Jf/iTFcC0MyhEyHZpc9Oi2c1DHx
-lOM06NQ88d7JUds+d3QItLc1nqakFqTFcr+Sroqz0spy7xlZME0lNY+nQZtdFohR209SBl2qsr0CdHyy
-ZWYWSc+7m5TrVyBmAuaqz59Lw67NOpMlTu6yxzPzFcUOVHbwWnbhd2y3n8rdzPohxdPaB1D5bnyihZ54
-UQ6NLPiwVf8PAAD//xTXDvpjDwAA
+yLPkUfwkxZCSVruWnezFlkjO3+/7RryCu0D/QRPhPoZkYgqo1ANB8jUGjtrXgJqtO8Kh0xEa6xAqdORb
+hkhw6DDgRh0pgdEeWoIYKLUdxA6htgFNpHAEp4+UIrTJ1uisx406dNZ00KEbGPBpcNp6Li5OpwLyQJ5t
+5VB8GfJRW593bZV6fHxU2616ef7fy/O3l+dvUFkPb/yu/wT4hCZFXTlkaChApLZ1GMCR0Q5q3KOjoUcf
+YWHS9PU7JhnD3hoEQ/1gnZgG46w89trXrF6e//vj+4/v8PL8PNqbnL621cU4LA2KhdmA/E5Gem39tqVF
+mDWZHYZriYMYt8feLU1H5Gh9ezNlOqCv0RuLfG5i+YhP0frYvFnLiMFrB9ZHDI02CAGdjliD7QeHUkYd
+LfllDSbTkqnYXiytbdGDXSmRvD13sWLmsur3GPb4t/S0bWk0Nb3JCbRBRwTtXAbt5KXTvnYYfhJlitbx
+O3sWrtXbAR6wapN9taG0fTKlmTHyTzYJRwI5h+FnO9+L7Bxve4uHNTBzpKBbZLXuwPoee6HxWROth/H1
+ePyinZmbX5M1uwm3MKQgsOY36DAQxzYgn/u5m96uuzmzdW7vos7z7yL73gpuBOPibmihroBNh70+LWW5
+XNLqLpDJErpKqw4D7dKMyRLmdHTUBn5Xin5jqEn0AdBHGy3yBkISyRMhT4xGM8IKKQUzlCK/tjyuzAQf
+7b/N81cwGdDwW2Z51rxZl46/cT5jG2vGAq+BD00KNh7XSjGuXESc63Bq6y9FOdv6hSgXvZqQu96rLJqi
+njPAd+3yMJHjUapeH5ZVObPHwIKwkfBwsLGT8duTjI0pq7Hjb4BmkrwpuVkMa/mXgDxKbJmSARstU/mM
+kOfEySVUa1y5Lxy8H9CI3Cj18Q/zmM8Y/ePHjyNXZKqrq6uraQKph87y4puADp5z0BeyEbDVoZbo5uEU
+kCkFM4J/HlW8VbceMhGoAb02zEynfYsbiOe+8WlAI9WJBBWCbprySN4dtznqq9N0u4h7+S0j9aSDl2D/
++vBwB0OgSIYcVJqxXgmIN4qT6UAzfL673cA/sPrL32+BAvTk7diVhWyMwVxNw0y9Gp2lhp/vbiHKN5d2
+jg4sXy9ljYpvbWIG1pjbLPhjPzmjQzZphkl1whEGsj4us1zXYGlEhE4zaCjgOkKPsaO6BCUflAFjCj4H
+OwQaMFz2vZSMyhZD3qPJ7zlKUeZCTENCzdOiSa6xzpVCBPyabBgr0+saoToWanQ6YH3B9K36XHLWIvoX
+AUXK6eJNwBgs7hFqHXUJZBbxS3QYGdkmZpdVYuuReZbwDN/5bWK8zpzeKsEx7jGc5GnYtYJaDAgH61xG
+KTxmYj4Cpyo3LBe3xkbsFY/Y6b2Vb2JZsXwCumoC9XnPCquW0pEYYYLo2O2NyuY8Ys0jY8aaZ30BCjWG
+fIegsIMDihhRixJ9UbPMvll4V8fOVv3rn+PVI6CuoaeAoCuZV6WtmsnLXMV//y4c4E83N+i3B7uzA9ZW
+bym0N/J082dk2/ov1fFLVlRt4oeJ0gEdakY1/p2aNY9aR601c+2GFNCdhk+kgw41Twg20kJqSvmFGpPR
+xumWNwq9iHmvfdLOHWGwjiJvxm6VRsgOly8qAwYjpWiLpJSMOYp9+T8xhmvhRwaQ6dDsxKN4Ao46Jp4y
+nMacmufdOzlq2+d+DoH2tsbTjNSCs1huV9JTcVYaWW49IwemmaTm4TRos8vyMCr7ScigS1W2V2COT7ZM
+zCLoeXeT5M46AswEzFWfP5aGXZtVJguc3GSPZ+Yrih2o7OC16MLv2G4/lZuZ9UOKp7UPoPLN+EQKPbGi
+HBo58GGr/h8AAP//gpfVwGEPAAA=
 `,
 	},
 
@@ -471,14 +476,18 @@ ksSM3mZZEk4Lexramm9x+f8EAAD//5Fgv/K/AAAA
 		name:    "feature-check-per-user-basis.sd",
 		local:   "/home/adamluzsi/src/github.com/toggler-io/toggler/docs/design/feature-check-per-user-basis.sd",
 		size:    622,
+<<<<<<< Updated upstream
 		modtime: 1568556972,
+=======
+		modtime: 1568556230,
+>>>>>>> Stashed changes
 		compressed: `
-H4sIAAAAAAAC/1xRy64TMQxd119hxLpFbCNdIYTED7CsZuFxnJmINKliZ674e5R5cIfuEvu8cvL50z0I
-WauCVqYpCS5SY4hMFkvGp1RsKhVH0qh4xeXrANDcd7ZSIbifGxfMbewK7H4QzwLqflmpNEmHh5saVetS
-aLPgYQnBHUfJtaT0kGyoRtb0zW4YFT/2NCbxGEpdJaa4SN6yRY/fwFxINGEVlriIf+PbJPaP3XfAjmfh
-3/8P4c4uhvWMC6UmmIsh9zf4AS7sdBPq2Au7dbHd7l94ADC3OT1jKhbztKeHg/g63/1exvhOig/KjVL6
-gyo2AF7M9b5eBa7XuySVAS7mmBK3RLajziWOpOKxf6E2X7BS9uWBPrJgx2DTrnn+jLWCp8oHfH/iKfHu
-sFYT1nhZ3g+FU7RtV5LHUWZaYqmr1t8AAAD//3B16NBuAgAA
+H4sIAAAAAAAC/1xRwa4bIQw8x1/hquek6hXpqaoq9Qd6jPbgGLNBJRBhs0/9+wp2V29fbuAZzwzD1y/X
+IGStClqZ5yS4SI0hMlksGZ9SsalUvJFGxTMu3yeA5n6ylQrB/V53wdy6XYHdL+K7gLo/VirN0unhokbV
+uhTaXXC3hOD2o+RaUnpINlQja/pmF4yKHzjdkngMpQ6JOS6S12zR4w8wFxLNWIUlLuLf+DKLYZUkpIId
+A3Z8F/77eQhXdjGMMy6UmmAuhtzf4Cc4sdMhNLgndgNYb9dvPAGYW52eMRWLed7Sw774Ot/8Xsb4TooP
+yo1S+ocqNgGezPW+XgXO56sklQlO5pgSt0S2sY4l3kjFY/9Cbb5gpezLA31kwc7Bpl2zN3msA58qH/Tt
+iYfEm8OoJox4Wd73PzpEW7GSPN7kTkssdWj9DwAA//99QKHibgIAAA==
 `,
 	},
 
@@ -1842,18 +1851,23 @@ zLpj6YdHyjrL0w4IhVLV+/8GAAD//7KtXRBlDwAA
 	"/docs/httpapi/README.md": {
 		name:    "README.md",
 		local:   "/home/adamluzsi/src/github.com/toggler-io/toggler/docs/httpapi/README.md",
+<<<<<<< Updated upstream
 		size:    1553,
 		modtime: 1568556972,
+=======
+		size:    1521,
+		modtime: 1568556355,
+>>>>>>> Stashed changes
 		compressed: `
-H4sIAAAAAAAC/6xTsW7bMBDd+RUHeo1idNXWIXGzZTDQoSjgM3WSWFMkQx7jGEX+vaAkx2pjuXCQUeLd
-vXvv3luAR7XDhqBl9ui1EIsFrO7WsESvl89flvsoxLrVEXQEhO+0jU7tiIFs5Z22DNwiA24NATugF1KJ
-CZyngKydBc0QSJF+pngr1u30SbkQKHpnK9hrboFbgm/r9SN8fXw4zT/VW+zykHsXoHOB4OASKLSgWlK7
-vjvusWkoQOVU6shy35cpLSZjHuI9IadAdzavXQmxIobgjHGJoR7eoDbYQGTkFKF2ARC8No77YQu4e8HO
-GxIi0FOiyGKz2fyKzorfAkC+YckS5L9w8iaXVMgoS8jlAHIEzeXdoTh+3QyPupKl9GlrtCr6HYpk9VOh
-KykAXsVrxs6LZCUjnTaRZDOprIMsgUOisXRGjpVxWzTmcJUsTd/02arMCPIxsn/ZeeSzVM7Wurntmwd/
-vxnu6GW0cU8BumRYe0PvJaDRGNGT0rVWg0NuB4Eva5FvCueP2gsxYkVZwo/RIgabIiegwKMxTr+273+p
-7I6f84JllJ5EnNhwgjGIeAaphBpNpDOAQ8vUlDPi63g8aUHD+cdDXBvE/6g8H6tLofo0j01oNmO2PsB3
-krALdGcTcyWXPwEAAP//jvmCfREGAAA=
+H4sIAAAAAAAC/6xTMW/bPBDd+SsO9BrF+FZt3+C42TIY6FAU8Jk6SawpkiGPcYwi/72gJMdqY7lJkVHi
+u3v33r1bgEe1x4agZfbotRCLBaxXG1ii18un/5aHKMSm1RF0BISvtItO7YmBbOWdtgzcIgPuDAE7oGdS
+iQmcp4CsnQXNEEiRfqJ4Kzbt9Em5ECh6Zys4aG6BW4Ivm80D/P9wf+5/xlvscpM7F6BzgeDoEii0oFpS
++746HrBpKEDlVOrIcl+XJS0mbe7jHSGnQCubx66EWFMe0hBGgtpgA5GRU4TaBUDw2jjumyxg9YydNyRE
+oMdEkcV2u/0RnRU/BYB85ZAlyD9p5E2GVMgoS8hwAFkPiAzvjsXp62Z41JUspU87o1XRz1Akqx8LXUkB
+8CJeMnceJDsY6TyJJBucMVm/LIFDohE6Y8PauB0ac3yXHU0P/mw3Zoz4N5G/xTeDXOKlcrbWzW1fPOT5
+NWCn7KKNBwrQJcPaG3prAY2BiJ6UrrUaknE7GHvdi7xLuLzM3ohRcZQlfBujYbApcuILPAXi/Gv39pfK
+qfg+b1hm6UXESfwmHIOJF5hKqNFEukA4lEzDOGO+jqeVFjSsf1zEew/vL+7On9G1I/q0bE3kNeMtfUDn
+5KKuyJy9kA9q+BUAAP//ZH0Zo/EFAAA=
 `,
 	},
 
@@ -1861,7 +1875,11 @@ krALdGcTcyWXPwEAAP//jvmCfREGAAA=
 		name:    "DarkLaunch.md",
 		local:   "/home/adamluzsi/src/github.com/toggler-io/toggler/docs/release/DarkLaunch.md",
 		size:    2476,
+<<<<<<< Updated upstream
 		modtime: 1568556972,
+=======
+		modtime: 1568556355,
+>>>>>>> Stashed changes
 		compressed: `
 H4sIAAAAAAAC/3xWTY4ctw7e1ykIGAZsoKbf8+IdwPbgIQMEcIA4AbxkS6wqpVWSQlFdrt3cIZsYSC43
 JwkoVU//TJJld0kkv48fP+oVfJ4I7pEP8D2WYKauqz98/eHCCC6DTASJo6GcIQ7A5AmzfkscbTHiYrhj
@@ -1880,8 +1898,8 @@ jzK9Vcej0P/NAAljyK7yqCiDdvzupkLAZpJzDE4iXw92sBCrhmcSdia3HmBof9JXnJOnc2bGOT13vKR6
 /M2AfXw5YFcifDblqzHek2AdRBfGNkjvfVYHH4hVs8psBlQCkNdtKvrmvLIm0hG7nJerlIKsi6e5u9uY
 eHr8XZM+PX6DkWNJ1aUuD9ZhCvBwD2+8OxDQjM7rqZ8e7t9uC3BRwW02fxLnJSyZKBMkZHGmeHx2/qbX
 S2tozW6ZmQy5Y4toCnPdo1vUTLLr3gtgWEFbfNYFWqvVMc3xSI3QLZtiOu/ai/2yjcI/L9X7f1mqV2Db
-/vz54YcNwuA4S2vkzQtFaX2myOOYa0HNszZC0fu4nB4V1frVel8krLydU+6b89pYXRcWZyknfeicHy1f
-TlSptp6z8HnvxyR3rm0QTXktKrXO7cXU62Jy2tD2dCI/3GXyZIRspX7X/RUAAP//cqt3vawJAAA=
+/vz54YcNwuA4S2vkzQtFaT3F0GHPtaDmWRuh6H1cTo+Kav1qvS8SVt7OKffNeW2srguLs5STPnTOj5Yv
+J6pUW89Z+Lz3Y5I71zaIprwWlVrn9mLqdTE5bWh7OpEf7jJ5MkK2Ur/r/goAAP//hLyNCqwJAAA=
 `,
 	},
 
@@ -1889,47 +1907,56 @@ TlSptp6z8HnvxyR3rm0QTXktKrXO7cXU62Jy2tD2dCI/3GXyZIRspX7X/RUAAP//cqt3vawJAAA=
 		name:    "README.md",
 		local:   "/home/adamluzsi/src/github.com/toggler-io/toggler/docs/release/README.md",
 		size:    2864,
+<<<<<<< Updated upstream
 		modtime: 1568556972,
+=======
+		modtime: 1568556355,
+>>>>>>> Stashed changes
 		compressed: `
-H4sIAAAAAAAC/5RWT5PcxA+9+1OosvWrH6Qms5srtwQS2APUVrIUB4qD3NbYYtotp9U9jvn0lLrtmdll
-OXCbP9a/956efAOfxHvJqWlubuD3DyGK9yOFBF56dn98c9uJ09tInlDpls7/78fu2xLzMwbsyX5qmseB
-QCme2BGg9zIrLJIhCbQE2Hqyj05CiuLhQJhyJFhz7yBFyf0ACE7GlgMmlgByAJnsk+63chk9xK1rK9mi
-sgN1FDCywDxQpFLYYYDaMmSlqLUTJyMBwsRekuVHCDRv7eyaNGAq0TOGZBEjoVqja39poAUORF2L7ggY
-OsiKPe2bx4EVWK3UIXtrI5Q8A54IvCzowWVNMlLUHcyDgJdTgSTFBSSn6z4UCKNfdo0V6PlEl5KlgYmi
-SkB/1UlrKThVnFZa4f0CDxQdhYQ9NbXHCqi1muQpPi0qdSDR0q8x61wDThMFrVPhmbyDxx40Ycpl9JY4
-9IB6pA4OUUbrdVPEvrk/lO8ux0gh+QUcem8BvypFC5/Zcj8o5U4gYuhkBC8pUVyMFwolPq9P186pe5lV
-e/IKz31Ryoupq1Rrq4smGi1hIa2jRHHkwJrYFSYiTVG67NjEvIoQLlsBkTT7BAeJQOiGtZ37H3bNPLAn
-oKA52shFZedpJhEPyn9RkWxLwOHAgRP5BVrum5nTYJUGPBWAw2KVJEdHMHACqcg8ZWWDvXnnVSAZi300
-TW/j85GuiF7Jf7aW0LGmyG02yVQQa3gg1a3bdaWNi3aBUTo+LHXIZz1tiK0dKFG3b34ryGz7OpYF98sm
-TInQenRHz5pWlRq6BdiCxbPNxWmKYtAHqtKwTbHYAgCHg8QRt2FsGSp0kgaKMBjHErzB65czrOjShTD6
-mija5nFXOrmWZA78xaJWHXk6ka+grf5jSbxoAq6pr6Rjw2ti7w3Rs7bnTfUbdFeEcXDROCobfwM/emnR
-w6eVOAnw9u7uyfbfB1BbE4dK1Zo7Cf9PVeya3XCND6DB1fGJO3PcOmKn++azPXh221UCLSY3wJ/SmgmY
-TCWCGzD09FxRaoz/+1BKaT0Yb+/u/rd7oiEnQbmjuO089GVkvwCekL1dmGqYFlSsBr1fUUc9FrrOIRTs
-+e5iuPOKfaTJs0HPaYCFdIX33e17eCQtovvwdaLIRps2dRpOlf9jkDnAbBW3fKNEQ5dTuYDXktFdU+PK
-zRslwBTRJTufdhXIVDsLnEzBdgvNHXVE70Fza0CtPme5bHvr8KMETmuV6kcKzouaos+mXMoXS5ZAW56t
-UMoxaLlIFWbNzpHq6sGcNtJXRusezMYMYO6Ygts0+X05ePALUafVcBLGnhL0UfKkTfNZRko8ksKGRKQv
-mWN5o9hZ/c2Iro6OaYtiQlui63Rw4Khp19gDJ1NnVrANkaBn3NusbN61bz6WX/hS+QUOsj7r2PzoFV3o
-f7XayPm15yTc1dcc78ml4tVKQTnZEX+yX+VgW0/FzCq8kQ4ml2JJ5kNGaGtCuJwmk9g5+Kmn2RyLZGP2
-UWCWeIQkPRVvI1T2y+5stFOUE3cEGOCnx8cHePdwDzn6M1DXxr1rNizqKgFCJ6Ph35HjopnyvviP4I28
-KYoroBcztFJlOyI5ehGW75rm9ZbkjXXwJuBIDcDrekjsW21mRt3SlOtj1T/WwI9XZ7B5XVF+w13JUpza
-mPovOQD+DgAA///CoRKzMAsAAA==
+H4sIAAAAAAAC/5RWTXPcRBC961d0xUUBqc3auXJLIAEfoFyJKQ4Uh9aoJTUeTSvTM6uIX0/1jLReu8yB
+236ov957/VpX8Em8l5ya5uoK/vwQong/UUjgZWD313fXnTi9juQJla7p/P9x6r4vMb9iwIHsp6a5HwmU
+4okdAXovi8IqGZJAS4CtJ/voJKQoHnrClCPBlvsAKUoeRkBwMrUcMLEEkB5ktk963Mtl9BD3rq1ki8oO
+1FHAyALLSJFKYYcBasuQlaLWTpxMBAgze0mWHyHQsrdzaNKIqUQvGJJFTIRqjW79pZFW6Im6Ft0DYOgg
+Kw50bO5HVmC1Un321kYoeUY8EXhZ0YPLmmSiqAdYRgEvpwJJiitITpd9KBBGvx4aKzDwiR5LlgZmiioB
+/UUnraXgVHHaaIX3K9xRdBQSDtTUHiug1mqSp/i0qNSBREu/xWxzjTjPFLROhTtp0HscQBOmXEZvicMA
+qA/UQR9lsl53RRyb2758dzlGCsmv4NB7C/hdKVr4wpb7Til3AhFDJxN4SYniarxQKPF5e7p2Tt3LrNqT
+F3gei1JeTF2lWltdNdFkCQtpHSWKEwfWxK4wEWmO0mXHJuZNhPC4FRBJs0/QSwRCN27t3P50aJaRPQEF
+zdFGLio7TzOLeFD+h4pkWwIOPQdO5FdoeWgWTqNVGvFUAA6rVZIcHcHICaQi85SVHfbmnVeBZCwO0TS9
+j88PdEH0Rv6ztYSONUVus0mmgljDA6nu3W4rbVy0K0zScb/WIZ/1tCO2daBE3bH5oyCz7+tUFtyvuzAl
+QuvRPXjWtKnU0C3AFiyebS7OcxSDPlCVhm2KxRYAOPQSJ9yHsWWo0EkaKcJoHEvwBq9f9/96dOmRMPqa
+KNrmcVc6uZRkDvzFojYdeTqRr6Bt/mNJvGgCrqkvpGPDa2LvDdGztpdd9Tt0F4RxcNGwLRt/BT97adHD
+pw1wCfD25ubJ9t8GUFsTh0rVmjsJ36Yqds1uvMQH0ODq+MSdOW4dsdNj89kePLvtJoEWkxvhb2nNBEym
+EsGNGAZ6rig1xv97KKW0HYy3NzffHCoBWwYnQbmjuO88DGVkvwKekL1dmGqYFlSsBr3fUEd9KHSdQyjY
+892j4S4b9pFmzwY9pxFW0g3ed9fv4Z60iO7D15kiG23a1Gk4Vf4fgiwBFqu455skGrqcygW8lIwemhpX
+bt4kAeaILtn5tKtAptpF4GQKtlto7qgTeg+aWwNq8znLZdtbh58kcNqqVD9ScF7UFH025VK+WLIE2vPs
+hVKOQctFqjBrdo5UNw/mtJO+MVr3YDFmAHPHFNyuyR/LwYPfiDqthpMwDpRgiJJnbZrPMlHiiRR2JCJ9
+yRzLG8XB6u8Gcl70Us1RTGhLdJkOeo6aDo09cDJ1ZgXbEAl6xr3NyuZdx+Zj+YUfK7/AQdZnHZsfvaJH
++l9tNnJ+7TkJd/U1x3tyqXi1UlBOdsSf7Fc52NZTMbMKb6Te5FIsyXzICG1NCI+nySR2Dn7qaTbHKtmY
+vRdYJD5AkoGKtxEq+/VwNto5yok7Agzwy/39Hby7u4Uc/RmoS+M+NDsWdZUAoZPJ8O/IcdFMeV88Bz+/
+InMUV0AvZmilynZEcvQiLD80zes9yRvr4E3AiRqA1/WQ2LfazIK6pynXx6p/rIEfL85g87qi/Ia7kqU4
+tTH1f3IA/BsAAP//YyiaVjALAAA=
 `,
 	},
 
 	"/docs/release/enrollment.md": {
 		name:    "enrollment.md",
 		local:   "/home/adamluzsi/src/github.com/toggler-io/toggler/docs/release/enrollment.md",
+<<<<<<< Updated upstream
 		size:    915,
 		modtime: 1568556972,
+=======
+		size:    883,
+		modtime: 1568556355,
+>>>>>>> Stashed changes
 		compressed: `
-H4sIAAAAAAAC/3SSwW4bPQyE73oKAj/+2yJwHyIFcu2lZ1oa7RLhSq7ItZu3L6R1GruJz+SIn2bmP/pR
-Vevm9B3sWwM9l1ZVVxSnl+JopwZnl1pC+LmgENNJtDq1qy5fdfjQxQXxFWkKvoDszRwrZWl2nZBk8gUN
-JEZc3mjlsrFSrCXLvLVxjXJtfYtmOaPsN0PDzC1JmcfkX4KsPN9isJ0Q/Sm8ZMp1K2nqqkKGdkZ6CuFZ
-DSROF1HdRwPP7vkobuZ1pYQo1sG0zhJJyrnqGSlcxJeHOLfHG9bqoK1pfzeyKtL45a1zyk2yxGHBl4ip
-9gQMW6q0si9Y2SUaHdmQKMHRViliLpEal9TJJe50dIRfgEIH4pLo2+EwBWN1JBq/4HeFAYnKth7RM2Dv
-wM6vKJRbXR+bf5fgFPqRAS3+bu1DaYOCDXRCiyjOM4Z3ff+Dv8E2HTS2dv8adft+9fJ8xPDpodHDMoZ7
-dcWuniNNVHvUFzHcL7BqvXwK6CmEw/9fnNibTPgdcdrbu/skNlFg6wYkZCnohZq1Hlmp5kzm7Phb9b0x
-fwIAAP//9Uwcg5MDAAA=
+H4sIAAAAAAAC/2ySwW4bMQxE7/oKAkVvi8D9iBTItZeeaWm0S4QruSLXbv6+kNapbThHgaRm+Djf6FdV
+rZvTT7BvDfRaWlVdUZzeiqOdGpxdagnh94JCTCfR6tSuc/k6h9tcXBDfkabgC8g+zLFSlmbXCkkmX9BA
+YsTlg1YuGyvFWrLMWxtqlGvrXTTLGWXXDA0ztyRlHpUGBRsoK8/38mwnRH8Jb5ly3UqaenchQzsjvYTw
+qgYSp4uo7qVhyx59UdzM60oJUawb0jpLJCnnqmekcBFfnmzcizas1UFb0/5fZFWksdU9KeUmWeJY+Utr
+qXbihi1VWtkXrOwSjY5sSJTgaKsUMZdIjUvqjiVinIeO8AtQ6EBcEv04HKZgrI5Ewz1/ThiQqGzrEZ05
+ezfs/I5CudX1GfbDpabQPx9mxT9RPo18Pk5oEcV5xmDV+25+G2zToW5r59Wo4/rTw/GE+/bRyFkZxT2a
+YlfGSBPVftKLGB4bWLVeng7yEsLh+xcSe1IJfyNOezp3LmITBba+eEKWgh6cWeuRlWrOZM6O/1HeE/Iv
+AAD//3Noyn1zAwAA
 `,
 	},
 

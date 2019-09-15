@@ -4,7 +4,7 @@ import (
 	"net/url"
 )
 
-// Flag is the basic entity with properties that feature flag holds
+// Flag is the basic entity with properties that release flag holds
 type Flag struct {
 	// ID represent the fact that this object will be persistent in the Subject
 	ID      string      `ext:"ID" json:"id"`

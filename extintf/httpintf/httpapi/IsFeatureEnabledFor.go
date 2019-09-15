@@ -13,15 +13,15 @@ type IsFeatureEnabledRequestParameters struct {
 }
 
 type IsFeatureEnabledRequestPayload struct {
-	// Feature is the Feature Flag name that is needed to be checked for enrollment
+	// Feature is the Name of the Release Flag that is needed to be checked for enrollment
 	//
 	// required: true
-	// example: rollout-feature-flag
+	// example: release-feature-flag
 	Feature string `json:"feature"`
 	// PilotID is the public unique ID of the pilot who's enrollment needs to be checked.
 	//
 	// required: true
-	// example: pilot-public-id
+	// example: pilot-public-external-id
 	PilotID string `json:"id"`
 }
 

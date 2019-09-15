@@ -17,7 +17,7 @@ import (
 // swagger:model IsFeatureGloballyEnabledRequestBody
 type IsFeatureGloballyEnabledRequestBody struct {
 
-	// Feature is the Feature Flag name that is needed to be checked for enrollment
+	// Feature is the release flag name that is needed to be checked for enrollment
 	// Required: true
 	Feature *string `json:"feature"`
 }

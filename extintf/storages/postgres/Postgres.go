@@ -388,7 +388,7 @@ func (pg *Postgres) pilotInsertNew(ctx context.Context, pilot *release.Pilot) er
 	flagID, err := strconv.ParseInt(pilot.FlagID, 10, 64)
 
 	if err != nil {
-		return fmt.Errorf(`invalid Feature Flag ID: ` + pilot.FlagID)
+		return fmt.Errorf(`invalid ReleaseFlagID: ` + pilot.FlagID)
 	}
 
 	row := pg.DB.QueryRowContext(ctx, pilotInsertNewQuery,

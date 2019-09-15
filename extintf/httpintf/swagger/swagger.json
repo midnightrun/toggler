@@ -56,7 +56,7 @@
     },
     "/rollout/flag/create.json": {
       "post": {
-        "description": "This operation allows you to create a new rollout feature flag.",
+        "description": "This operation allows you to create a new release flag.",
         "consumes": [
           "application/json"
         ],
@@ -71,17 +71,8 @@
           "rollout",
           "feature-flag"
         ],
-        "summary": "Create FlagRollout Feature Flag",
-        "operationId": "CreateRolloutFeatureFlag",
-        "parameters": [
-          {
-            "name": "Body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/Flag"
-            }
-          }
-        ],
+        "summary": "Create release Flag",
+        "operationId": "CreateReleaseFlag",
         "responses": {
           "200": {
             "$ref": "#/responses/createRolloutFeatureFlagResponse"
@@ -197,7 +188,7 @@
           "global",
           "websocket"
         ],
-        "summary": "Socket API to check Rollout Feature Flag Status",
+        "summary": "Socket API to check release flag Status",
         "operationId": "Websocket",
         "parameters": [
           {
@@ -226,10 +217,10 @@
     "EnrollmentResponseBody": {
       "description": "The content will be always given, regardless if the flag exists or not.\nThis helps the developers to use it as a null object, regardless the toggler service state.",
       "type": "object",
-      "title": "EnrollmentResponse will be returned when feature flag status is requested.",
+      "title": "EnrollmentResponse will be returned when release flag status is requested.",
       "properties": {
         "enrollment": {
-          "description": "Rollout feature flag enrollment status.",
+          "description": "release flag enrollment status.",
           "type": "boolean",
           "x-go-name": "Enrollment"
         }
@@ -263,7 +254,7 @@
       "x-go-package": "github.com/toggler-io/toggler/extintf/httpintf/httpapi"
     },
     "Flag": {
-      "description": "Flag is the basic entity with properties that feature flag holds",
+      "description": "Flag is the basic entity with properties that release flag holds",
       "type": "object",
       "properties": {
         "id": {
@@ -319,16 +310,16 @@
       ],
       "properties": {
         "feature": {
-          "description": "Feature is the Feature Flag name that is needed to be checked for enrollment",
+          "description": "Feature is the Name of the Release Flag that is needed to be checked for enrollment",
           "type": "string",
           "x-go-name": "Feature",
-          "example": "rollout-feature-flag"
+          "example": "release-feature-flag"
         },
         "id": {
           "description": "PilotID is the public unique ID of the pilot who's enrollment needs to be checked.",
           "type": "string",
           "x-go-name": "PilotID",
-          "example": "pilot-public-id"
+          "example": "pilot-public-external-id"
         }
       },
       "x-go-package": "github.com/toggler-io/toggler/extintf/httpintf/httpapi"
@@ -340,7 +331,7 @@
       ],
       "properties": {
         "feature": {
-          "description": "Feature is the Feature Flag name that is needed to be checked for enrollment",
+          "description": "Feature is the release flag name that is needed to be checked for enrollment",
           "type": "string",
           "x-go-name": "Feature",
           "example": "rollout-feature-flag"
@@ -378,10 +369,10 @@
     "RolloutClientConfigResponseBody": {
       "description": "The content expected to be cached in some form of state container.",
       "type": "object",
-      "title": "RolloutClientConfigResponseBody will contain the requested feature flag states for a certain pilot.",
+      "title": "RolloutClientConfigResponseBody will contain the requested release flag states for a certain pilot.",
       "properties": {
         "states": {
-          "description": "States holds the requested rollout feature flag enrollment statuses.",
+          "description": "States holds the requested release flag enrollment statuses.",
           "type": "object",
           "additionalProperties": {
             "type": "boolean"

@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Flag Flag is the basic entity with properties that feature flag holds
+// Flag Flag is the basic entity with properties that release flag holds
 // swagger:model Flag
 type Flag struct {
 

@@ -105,7 +105,7 @@ func (spec pilotFinderSpec) Test(t *testing.T) {
 				thenNoPilotsFound(s)
 			})
 
-			s.When(`feature flag exists`, func(s *testcase.Spec) {
+			s.When(`release flag exists`, func(s *testcase.Spec) {
 				s.Let(`ff`, func(t *testcase.T) interface{} {
 					ff := &release.Flag{Name: t.I(`flagName`).(string)}
 					require.Nil(t, spec.Subject.Save(spec.ctx(), ff))
@@ -185,7 +185,7 @@ func (spec pilotFinderSpec) Test(t *testing.T) {
 				ThenNoPilotsFound(s)
 			})
 
-			s.When(`feature flag exists`, func(s *testcase.Spec) {
+			s.When(`release flag exists`, func(s *testcase.Spec) {
 				s.Let(`featureFlagID`, func(t *testcase.T) interface{} {
 					ff := &release.Flag{Name: t.I(`flagName`).(string)}
 					ff.Rollout.Strategy.Percentage = 100

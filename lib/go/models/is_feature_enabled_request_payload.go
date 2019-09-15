@@ -17,7 +17,7 @@ import (
 // swagger:model IsFeatureEnabledRequestPayload
 type IsFeatureEnabledRequestPayload struct {
 
-	// Feature is the Feature Flag name that is needed to be checked for enrollment
+	// Feature is the Name of the Release Flag that is needed to be checked for enrollment
 	// Required: true
 	Feature *string `json:"feature"`
 

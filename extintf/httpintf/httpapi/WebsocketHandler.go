@@ -45,7 +45,7 @@ type WSLoadBalanceErrResp struct {
 
 	swagger:route GET /ws feature-flag pilot global websocket Websocket
 
-	Socket API to check Rollout Feature Flag Status
+	Socket API to check release flag Status
 
 	This endpoint currently meant to used by servers and not by clients.
 	The  reason behind is that it is much more easy to calculate with server quantity,

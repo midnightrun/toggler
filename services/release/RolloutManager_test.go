@@ -65,7 +65,7 @@ func SpecRolloutManagerDeleteFeatureFlag(s *testcase.Spec) {
 			return ff
 		})
 
-		s.When(`feature flag id is empty`, func(s *testcase.Spec) {
+		s.When(`release flag id is empty`, func(s *testcase.Spec) {
 			s.Let(`flag ID`, func(t *testcase.T) interface{} { return `` })
 
 			s.Then(`it will return error about it`, func(t *testcase.T) {
@@ -243,7 +243,7 @@ func SpecRolloutManagerCreateFeatureFlag(s *testcase.Spec) {
 			})
 		})
 
-		s.When(`feature flag`, func(s *testcase.Spec) {
+		s.When(`release flag`, func(s *testcase.Spec) {
 			s.Context(`is nil`, func(s *testcase.Spec) {
 				s.Let(`ReleaseFlag`, func(t *testcase.T) interface{} { return nil })
 
@@ -275,7 +275,7 @@ func SpecRolloutManagerCreateFeatureFlag(s *testcase.Spec) {
 						GetReleaseFlag(t).ID = ``
 					})
 
-					s.Then(`it will report feature flag already exists error`, func(t *testcase.T) {
+					s.Then(`it will report release flag already exists error`, func(t *testcase.T) {
 						require.Equal(t, release.ErrFlagAlreadyExist, subject(t))
 					})
 				})
@@ -321,7 +321,7 @@ func SpecRolloutManagerUpdateFeatureFlag(s *testcase.Spec) {
 			return ff
 		})
 
-		s.When(`input is invalid for the feature flag Verify low level domain requirement`, func(s *testcase.Spec) {
+		s.When(`input is invalid for the release flag Verify low level domain requirement`, func(s *testcase.Spec) {
 			s.Let(`RolloutPercentage`, func(t *testcase.T) interface{} { return 128 })
 
 			s.Then(`it will report error`, func(t *testcase.T) {
@@ -329,7 +329,7 @@ func SpecRolloutManagerUpdateFeatureFlag(s *testcase.Spec) {
 			})
 		})
 
-		s.When(`feature flag`, func(s *testcase.Spec) {
+		s.When(`release flag`, func(s *testcase.Spec) {
 			s.Context(`is nil`, func(s *testcase.Spec) {
 				s.Let(`ReleaseFlag`, func(t *testcase.T) interface{} { return nil })
 
@@ -398,7 +398,7 @@ func SpecRolloutManagerListFeatureFlags(s *testcase.Spec) {
 				EnsureFlag(t, `c`, 0)
 			})
 
-			s.Then(`feature flags are returned`, func(t *testcase.T) {
+			s.Then(`release flags are returned`, func(t *testcase.T) {
 				flags := onSuccess(t)
 
 				expectedFlagNames := []string{`a`, `b`, `c`}
@@ -415,7 +415,7 @@ func SpecRolloutManagerListFeatureFlags(s *testcase.Spec) {
 				require.Nil(t, GetStorage(t).Truncate(context.Background(), release.Flag{}))
 			})
 
-			s.Then(`feature flags are returned`, func(t *testcase.T) {
+			s.Then(`release flags are returned`, func(t *testcase.T) {
 				flags := onSuccess(t)
 
 				require.Equal(t, []*release.Flag{}, flags)
@@ -455,7 +455,7 @@ func SpecRolloutManagerSetPilotEnrollmentForFeature(s *testcase.Spec) {
 			return &ff
 		}
 
-		s.When(`no feature flag is seen ever before`, func(s *testcase.Spec) {
+		s.When(`no release flag is seen ever before`, func(s *testcase.Spec) {
 			s.Let(`FlagID`, func(t *testcase.T) interface{} { return `` })
 			s.Before(func(t *testcase.T) {
 				require.Nil(t, GetStorage(t).Truncate(context.Background(), release.Flag{}))
@@ -466,7 +466,7 @@ func SpecRolloutManagerSetPilotEnrollmentForFeature(s *testcase.Spec) {
 			})
 		})
 
-		s.When(`feature flag already configured`, func(s *testcase.Spec) {
+		s.When(`release flag already configured`, func(s *testcase.Spec) {
 			s.Before(func(t *testcase.T) {
 				require.Nil(t, GetStorage(t).Save(context.TODO(), GetReleaseFlag(t)))
 			})
@@ -559,7 +559,7 @@ func SpecRolloutManagerUnsetPilotEnrollmentForFeature(s *testcase.Spec) {
 			return &ff
 		}
 
-		s.When(`no feature flag is seen ever before`, func(s *testcase.Spec) {
+		s.When(`no release flag is seen ever before`, func(s *testcase.Spec) {
 			s.Let(`FlagID`, func(t *testcase.T) interface{} { return `` })
 			s.Before(func(t *testcase.T) {
 				require.Nil(t, GetStorage(t).Truncate(context.Background(), release.Flag{}))
@@ -570,7 +570,7 @@ func SpecRolloutManagerUnsetPilotEnrollmentForFeature(s *testcase.Spec) {
 			})
 		})
 
-		s.When(`feature flag already configured`, func(s *testcase.Spec) {
+		s.When(`release flag already configured`, func(s *testcase.Spec) {
 			s.Before(func(t *testcase.T) {
 				require.Nil(t, GetStorage(t).Save(context.TODO(), GetReleaseFlag(t)))
 			})

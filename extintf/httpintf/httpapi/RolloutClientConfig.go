@@ -32,10 +32,10 @@ type RolloutClientConfigResponse struct {
 	Body RolloutClientConfigResponseBody
 }
 
-// RolloutClientConfigResponseBody will contain the requested feature flag states for a certain pilot.
+// RolloutClientConfigResponseBody will contain the requested release flag states for a certain pilot.
 // The content expected to be cached in some form of state container.
 type RolloutClientConfigResponseBody struct {
-	// States holds the requested rollout feature flag enrollment statuses.
+	// States holds the requested release flag enrollment statuses.
 	States map[string]bool `json:"states"`
 }
 

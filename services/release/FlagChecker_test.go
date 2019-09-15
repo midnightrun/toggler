@@ -66,7 +66,7 @@ func SpecFeatureFlagChecker_GetPilotFlagStates(s *testcase.Spec) {
 	s.Before(cleanup)
 	s.After(cleanup)
 
-	s.When(`no feature flag is set`, func(s *testcase.Spec) {
+	s.When(`no release flag is set`, func(s *testcase.Spec) {
 		s.Before(func(t *testcase.T) {
 			require.Nil(t, GetStorage(t).Truncate(context.Background(), release.Flag{}))
 		})
@@ -81,7 +81,7 @@ func SpecFeatureFlagChecker_GetPilotFlagStates(s *testcase.Spec) {
 		})
 	})
 
-	s.When(`some of the feature flag exists`, func(s *testcase.Spec) {
+	s.When(`some of the release flag exists`, func(s *testcase.Spec) {
 		s.Before(func(t *testcase.T) {
 			require.Nil(t, GetStorage(t).Save(context.Background(), GetReleaseFlag(t)))
 		})
@@ -148,7 +148,7 @@ func SpecFeatureFlagChecker_GetPilotFlagStates(s *testcase.Spec) {
 
 			for _, flagName := range t.I(`flag names`).([]string) {
 				if _, ok := states[flagName]; !ok {
-					t.Fatalf(`feature flag not included in the return states: %s`, flagName)
+					t.Fatalf(`release flag not included in the return states: %s`, flagName)
 				}
 			}
 		})
@@ -176,7 +176,7 @@ func SpecFeatureFlagChecker_IsFeatureGloballyEnabledFor(s *testcase.Spec) {
 		})
 	}
 
-	s.When(`feature flag is not seen before`, func(s *testcase.Spec) {
+	s.When(`release flag is not seen before`, func(s *testcase.Spec) {
 		s.Before(func(t *testcase.T) {
 			require.Nil(t, GetStorage(t).Truncate(context.Background(), release.Flag{}))
 		})
@@ -184,7 +184,7 @@ func SpecFeatureFlagChecker_IsFeatureGloballyEnabledFor(s *testcase.Spec) {
 		thenItWillReportThatFeatureNotGlobballyEnabled(s)
 	})
 
-	s.When(`feature flag is given`, func(s *testcase.Spec) {
+	s.When(`release flag is given`, func(s *testcase.Spec) {
 		s.Before(func(t *testcase.T) {
 			require.Nil(t, GetStorage(t).Save(context.TODO(), GetReleaseFlag(t)))
 		})
@@ -216,7 +216,7 @@ func SpecFeatureFlagChecker_IsFeatureEnabledFor(s *testcase.Spec) {
 			require.Nil(t, GetStorage(t).Truncate(context.Background(), release.Flag{}))
 		})
 
-		s.Then(`it will tell that feature flag is not enabled`, func(t *testcase.T) {
+		s.Then(`it will tell that release flag is not enabled`, func(t *testcase.T) {
 			ok, err := subject(t)
 			require.Nil(t, err)
 			require.False(t, ok)
@@ -283,7 +283,7 @@ func SpecFeatureFlagChecker_IsFeatureEnabledFor(s *testcase.Spec) {
 
 						})
 
-						s.Then(`the pilot will be not enrolled for the feature flag`, func(t *testcase.T) {
+						s.Then(`the pilot will be not enrolled for the release flag`, func(t *testcase.T) {
 							ok, err := subject(t)
 							require.Nil(t, err)
 							require.False(t, ok)

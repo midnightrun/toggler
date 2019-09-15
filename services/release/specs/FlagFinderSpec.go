@@ -50,7 +50,7 @@ func (spec FlagFinderSpec) Test(t *testing.T) {
 				return ff
 			}
 
-			s.When(`we don't have feature flag yet`, func(s *testcase.Spec) {
+			s.When(`we don't have release flag yet`, func(s *testcase.Spec) {
 				s.Before(func(t *testcase.T) { require.Nil(t, spec.Subject.Truncate(spec.ctx(), release.Flag{})) })
 
 				s.Then(`we receive back nil pointer`, func(t *testcase.T) {
@@ -58,7 +58,7 @@ func (spec FlagFinderSpec) Test(t *testing.T) {
 				})
 			})
 
-			s.When(`we have a feature flag already set`, func(s *testcase.Spec) {
+			s.When(`we have a release flag already set`, func(s *testcase.Spec) {
 				s.Let(`ff`, func(t *testcase.T) interface{} {
 					return &release.Flag{Name: featureName}
 				})

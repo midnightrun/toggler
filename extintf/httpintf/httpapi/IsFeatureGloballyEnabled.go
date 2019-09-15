@@ -6,7 +6,7 @@ import (
 )
 
 // IsFeatureGloballyEnabledRequestParameters is the expected payload
-// that holds the feature flag name that needs to be observed from global rollout perspective.
+// that holds the release flag name that needs to be observed from global rollout perspective.
 // swagger:parameters IsFeatureGloballyEnabled
 type IsFeatureGloballyEnabledRequestParameters struct {
 	// in: body
@@ -14,7 +14,7 @@ type IsFeatureGloballyEnabledRequestParameters struct {
 }
 
 type IsFeatureGloballyEnabledRequestBody struct {
-	// Feature is the Feature Flag name that is needed to be checked for enrollment
+	// Feature is the release flag name that is needed to be checked for enrollment
 	//
 	// required: true
 	// example: rollout-feature-flag

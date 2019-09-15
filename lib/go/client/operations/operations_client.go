@@ -25,32 +25,32 @@ type Client struct {
 }
 
 /*
-CreateRolloutFeatureFlag creates flag rollout feature flag
+CreateReleaseFlag creates release flag
 
-This operation allows you to create a new rollout feature flag.
+This operation allows you to create a new release flag.
 */
-func (a *Client) CreateRolloutFeatureFlag(params *CreateRolloutFeatureFlagParams) (*CreateRolloutFeatureFlagOK, error) {
+func (a *Client) CreateReleaseFlag(params *CreateReleaseFlagParams) (*CreateReleaseFlagOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCreateRolloutFeatureFlagParams()
+		params = NewCreateReleaseFlagParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CreateRolloutFeatureFlag",
+		ID:                 "CreateReleaseFlag",
 		Method:             "POST",
 		PathPattern:        "/rollout/flag/create.json",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"http", "https"},
 		Params:             params,
-		Reader:             &CreateRolloutFeatureFlagReader{formats: a.formats},
+		Reader:             &CreateReleaseFlagReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	return result.(*CreateRolloutFeatureFlagOK), nil
+	return result.(*CreateReleaseFlagOK), nil
 
 }
 
@@ -159,7 +159,7 @@ func (a *Client) RolloutClientConfig(params *RolloutClientConfigParams) (*Rollou
 }
 
 /*
-Websocket sockets API to check rollout feature flag status
+Websocket sockets API to check release flag status
 
 This endpoint currently meant to used by servers and not by clients.
 The  reason behind is that it is much more easy to calculate with server quantity,

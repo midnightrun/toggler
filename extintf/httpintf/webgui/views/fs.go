@@ -223,19 +223,24 @@ H4sIAAAAAAAC/6quTklNy8xLVVDKTczMU6qt5VJQUFCwScksswOzQKC6Wg8mrg+WqK5OzUuprQUEAAD/
 	"/flag/create.html": {
 		name:    "create.html",
 		local:   "views/flag/create.html",
+<<<<<<< Updated upstream
 		size:    2159,
 		modtime: 1568556972,
+=======
+		size:    2151,
+		modtime: 1568556248,
+>>>>>>> Stashed changes
 		compressed: `
-H4sIAAAAAAAC/8xVT2vbThC951MMc/n9epDk5CwJQkugEEpIybmMtWNpYbW77J/8wfi7l5XkRBV2apdS
-4otnNbPvvXmz0m63gjdSM2BPUuNudwEAUAr5CI0i7ytsjA6sA9ZDZsh2V4tk1jEJkD5rWAd2WG+3kH+j
-nmG3K4vuarZ3hmyj46ydAS8LVLY2z5lyLQylcfrLLhd7hn0b43qgJkijKyw2ilqEnkNnRIXW+IC/0A7V
-r1FGSraaBYKgQNlahidygnX2RKHppG4rPMQ58kpWwnM4nB5KpLYxgKaeK/wxakIIL5Yr7KQQrBEeSUWe
-hNYXx6GW9qUBOKOy1plo8biGYbOiNSvYGFfhhilEx1jfjAGkaZXFUPEblLEbKd5AptaS53kK8V2A6Tf2
-H/g5nFRuFTXcGSX4TT0kxoE8z/N3mi8LIR//hauWXXoDqGWs741SJga4e312rr0ztLnDbgTOfXAUuH3J
-Z3WnG+9IJ9xe6gpXCD09V3i5Wp2EMB3W1Uew3DMLrL8zCzAbCB2DIy1MD9ZzFGa/knrMjd6dO4mB5NAM
-EnriPsN4Hfs1uz848+msT7z7rpKuPM/hf2PTd4/Up48wEsGN9NLoaysf7m+x/jKt4fruKzzc357r/gLv
-3XdhX3trWtlcW3nGYKJT508ldNIPn6H/PDTRB9PDXgKopGHf9F+a0TqGYPSk2Md1LxcX21QwizPrZE/u
-BevPjikw3Chqy2JMHuEqi+PXWlmkK3Nxa4+6DyyncLtlLXa7nwEAAP//kRpWMG8IAAA=
+H4sIAAAAAAAC/8xVTWvbQBC951cMc2l7kOTkLAlCS6AQSkjJuYy1Y2lhtbvsRz4w/u9lJTlVhZ3apZT4
+4lnN7Htv3qy0263gjdQM2JPUuNtdAACUQj5Co8j7ChujA+uA9ZAZst3VIpl1TAKkzxrWgR3W2y3k36hn
+2O3Korua7Z0h2+g4a2fAywKVrc1zplwLQ2mc/rLLxZ5h38a4HqgJ0ugKi42iFqHn0BlRoTU+4G+0Q/Vr
+lJGSrWaBIChQtpbhiZxgnT1RaDqp2woPcY68kpXwHA6nhxKpbQygqecKf4yaEMKL5Qo7KQRrhEdSkSeh
+9cVxqKV9aQDOqKx1Jlo8rmHYrGjNCjbGVbhhCtEx1jdjAGlaZTFU/AFl7EaKXyBTa8nzPIX4JsD0G/sP
+/BxOKreKGu6MEuxGpoE0z/M3mi4LIR//h5uWXTr51DLW90YpEwPcvT4719YZ2txZNwLnPjgK3L7ks7rT
+DXekE24vdYUrhJ6eK7xcrU5CmA7p6j1Y7pkF1t+ZBZgNhI7BkRamB+s5CrNfST3mRu/OncRAcmgGCT1x
+n2G8jv2a3V+e9Yl331XSlec5fDQ2fe9IfXoPIxHcSC+Nvrby4f4W6y/TGq7vvsLD/e257i/w3nwX9rW3
+ppXNtZVnDCY6df5UQic9JCkfPDTRB9PDXgKopGHf9D+a0TqGYPSk2Md1LxcX2lQwizPrZE/uBevPjikw
+3Chqy2JMHuEqi+PXWVmkq3JxW4+6DyyncLtlLXa7nwEAAP//dcyE7WcIAAA=
 `,
 	},
 
