@@ -5,6 +5,7 @@ import (
 
 	"github.com/adamluzsi/frameless/resources"
 
+	"github.com/toggler-io/toggler/domains/deployment"
 	"github.com/toggler-io/toggler/domains/release"
 	"github.com/toggler-io/toggler/domains/security"
 )
@@ -18,5 +19,6 @@ type Storage interface {
 	release.PilotFinder
 	release.RolloutFinder
 	security.TokenFinder
+	deployment.EnvironmentFinder
 	io.Closer
 }

@@ -83,6 +83,18 @@ func (s *InMemory) FindReleasePilotByReleaseFlagAndDeploymentEnvironmentAndExter
 	return nil, nil
 }
 
+func (s *InMemory) FindDeploymentEnvironmentByAlias(ctx context.Context, idOrName string, env *deployment.Environment) (bool, error) {
+	for _, v := range s.TableFor(deployment.Environment{}) {
+		record := v.(*deployment.Environment)
+
+		if record.ID == idOrName || record.Name == idOrName {
+			*env = *record
+			return true, nil
+		}
+	}
+	return false, nil
+}
+
 func (s *InMemory) FindReleaseFlagByName(ctx context.Context, name string) (*release.Flag, error) {
 	for _, v := range s.TableFor(release.Flag{}) {
 		flagRecord := v.(*release.Flag)

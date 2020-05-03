@@ -61,6 +61,16 @@ func (pg *Postgres) FindReleaseRolloutByReleaseFlagAndDeploymentEnvironment(ctx 
 	return true, nil
 }
 
+func (pg *Postgres) FindDeploymentEnvironmentByAlias(ctx context.Context, idOrName string, env *deployment.Environment) (bool, error) {
+	var m deploymentEnvironmentMapper
+	const format = `SELECT %s FROM deployment_environments WHERE id = $1 OR name = $1`
+	err := m.Map(pg.DB.QueryRowContext(ctx, fmt.Sprintf(format, m.Columns()), idOrName), env)
+	if err == sql.ErrNoRows {
+		return false, nil
+	}
+	return err == nil, err
+}
+
 func (pg *Postgres) Close() error {
 	switch db := pg.DB.(type) {
 	case interface{ Close() error }:
@@ -342,7 +352,6 @@ func (pg *Postgres) FindReleaseFlagsByName(ctx context.Context, flagNames ...str
 	return iterators.NewSQLRows(flags, mapper)
 }
 
-
 const releaseFlagInsertNewQuery = `
 INSERT INTO "release_flags" (id, name)
 VALUES ($1, $2);
@@ -580,7 +589,6 @@ func (pg *Postgres) tokenFindAll(ctx context.Context) frameless.Iterator {
 	return iterators.NewSQLRows(rows, m)
 }
 
-
 const releaseFlagUpdateQuery = `
 UPDATE "release_flags"
 SET name = $1
@@ -739,6 +747,23 @@ func (m tokenMapper) Map(s iterators.SQLRowScanner, ptr interface{}) error {
 		return err
 	}
 	src.IssuedAt = src.IssuedAt.In(timeLocation)
+	return reflects.Link(src, ptr)
+}
+
+type deploymentEnvironmentMapper struct{}
+
+func (m deploymentEnvironmentMapper) Columns() []string {
+	return []string{`id`, `name`}
+}
+
+func (m deploymentEnvironmentMapper) Map(s iterators.SQLRowScanner, ptr interface{}) error {
+	var src deployment.Environment
+	if err := s.Scan(
+		&src.ID,
+		&src.Name,
+	); err != nil {
+		return err
+	}
 	return reflects.Link(src, ptr)
 }
 

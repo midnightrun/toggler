@@ -36,7 +36,9 @@ func (spec pilotFinderSpec) Test(t *testing.T) {
 	s := testcase.NewSpec(t)
 	SetUp(s)
 
-	s.LetValue(ExampleStorageLetVar, spec.Subject)
+	s.Let(ExampleStorageLetVar, func(t *testcase.T) interface{} {
+		return spec.Subject
+	})
 
 	s.Test(`ManualPilotEnrollment`, func(t *testcase.T) {
 		specs.CommonSpec{
@@ -71,12 +73,6 @@ func (spec pilotFinderSpec) Test(t *testing.T) {
 					require.Nil(t, iter.Close())
 				})
 			}
-
-			s.When(`feature object is nil`, func(s *testcase.Spec) {
-				s.LetValue(ExampleReleaseFlagLetVar, nil)
-
-				thenNoPilotsFound(s)
-			})
 
 			s.When(`flag was never persisted before`, func(s *testcase.Spec) {
 				s.Let(ExampleReleaseFlagLetVar, func(t *testcase.T) interface{} {

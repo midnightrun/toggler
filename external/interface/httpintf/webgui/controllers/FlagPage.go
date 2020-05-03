@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"strconv"
 	"strings"
 
 	"github.com/adamluzsi/frameless"
@@ -81,7 +82,7 @@ func (ctrl *Controller) flagAction(w http.ResponseWriter, r *http.Request) {
 	case http.MethodPost:
 		switch strings.ToUpper(r.FormValue(`_method`)) {
 		case http.MethodPut:
-			ff, err := httputils.ParseFlagFromForm(r)
+			ff, err := ParseFlagFromForm(r)
 
 			if ctrl.handleError(w, r, err) {
 				return
@@ -104,7 +105,7 @@ func (ctrl *Controller) flagAction(w http.ResponseWriter, r *http.Request) {
 			return
 
 		case http.MethodPost:
-			ff, err := httputils.ParseFlagFromForm(r)
+			ff, err := ParseFlagFromForm(r)
 
 			if ctrl.handleError(w, r, err) {
 				return
@@ -160,7 +161,7 @@ func (ctrl *Controller) flagSetPilotAction(w http.ResponseWriter, r *http.Reques
 	switch r.Method {
 	case http.MethodPost:
 
-		p, err := httputils.ParseFlagPilotFromForm(r)
+		p, err := ParseFlagPilotFromForm(r)
 
 		if ctrl.handleError(w, r, err) {
 			return
@@ -206,7 +207,7 @@ func (ctrl *Controller) flagCreateNewAction(w http.ResponseWriter, r *http.Reque
 
 	case http.MethodPost:
 
-		ff, err := httputils.ParseFlagFromForm(r)
+		ff, err := ParseFlagFromForm(r)
 
 		if err != nil {
 			log.Println(err)
@@ -238,4 +239,58 @@ func (ctrl *Controller) flagCreateNewAction(w http.ResponseWriter, r *http.Reque
 		http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
 		return
 	}
+}
+
+func ParseFlagFromForm(r *http.Request) (*release.Flag, error) {
+
+	if err := r.ParseForm(); err != nil {
+		return nil, err
+	}
+
+	var flag release.Flag
+
+	flag.Name = r.Form.Get(`flag.name`)
+	flag.ID = r.Form.Get(`flag.id`)
+
+	var randSeedSalt int64
+
+	rawRandSeedSalt := r.Form.Get(`flag.rollout.randSeed`)
+
+	if rawRandSeedSalt != `` {
+
+		var err error
+		randSeedSalt, err = strconv.ParseInt(rawRandSeedSalt, 10, 64)
+
+		if err != nil {
+			return nil, err
+		}
+
+	}
+
+	flag.Rollout.RandSeed = randSeedSalt
+
+	percentage, err := strconv.ParseInt(r.Form.Get(`flag.rollout.strategy.percentage`), 10, 32)
+
+	if err != nil {
+		return nil, err
+	}
+
+	flag.Rollout.Strategy.Percentage = int(percentage)
+
+	var decisionLogicAPI *url.URL
+	rawURL := r.Form.Get(`flag.rollout.strategy.decisionLogicApi`)
+
+	if rawURL != `` {
+		var err error
+		decisionLogicAPI, err = url.ParseRequestURI(rawURL)
+
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	flag.Rollout.Strategy.DecisionLogicAPI = decisionLogicAPI
+
+	return &flag, nil
+
 }
