@@ -94,7 +94,7 @@ func (ctrl ViewsController) GetPilotConfig(w http.ResponseWriter, r *http.Reques
 
 	ctx := context.WithValue(r.Context(), `pilot-ip-addr`, httputils.GetClientIP(r))
 
-	states, err := ctrl.UseCases.FlagChecker.GetReleaseFlagPilotEnrollmentStates(ctx, request.Body.PilotExtID, request.Body.ReleaseFlags...)
+	states, err := ctrl.UseCases.FlagChecker.GetAllReleaseFlagStatesOfThePilot(ctx, request.Body.ReleaseFlags, request.Body.PilotExtID)
 
 	if handleError(w, err, http.StatusInternalServerError) {
 		return

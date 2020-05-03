@@ -68,10 +68,10 @@ func (ctrl *Controller) pilotEditPage(w http.ResponseWriter, r *http.Request) {
 
 	pilots := ctrl.UseCases.RolloutManager.FindPilotEntriesByExtID(r.Context(), pilotExtID)
 
-	pilotsIndex := make(map[string]release.Pilot) // FlagID => Pilot
+	pilotsIndex := make(map[string]release.ManualPilotEnrollment) // FlagID => ManualPilotEnrollment
 
 	for pilots.Next() {
-		var p release.Pilot
+		var p release.ManualPilotEnrollment
 
 		if httputils.HandleError(w, pilots.Decode(&p), http.StatusInternalServerError) {
 			return
@@ -98,7 +98,7 @@ func (ctrl *Controller) pilotEditPage(w http.ResponseWriter, r *http.Request) {
 		p, ok := pilotsIndex[ff.ID]
 		if !ok {
 			editFF.PilotState = `undefined`
-		} else if p.Enrolled {
+		} else if p.IsParticipating {
 			editFF.PilotState = `whitelisted`
 		} else {
 			editFF.PilotState = `blacklisted`
@@ -112,7 +112,7 @@ func (ctrl *Controller) pilotEditPage(w http.ResponseWriter, r *http.Request) {
 
 func (ctrl *Controller) pilotFlagSetRollout(w http.ResponseWriter, r *http.Request) {
 
-	var pilot release.Pilot
+	var pilot release.ManualPilotEnrollment
 	pilot.FlagID = r.FormValue(`pilot.flagID`)
 	pilot.ExternalID = r.FormValue(`pilot.extID`)
 
@@ -142,13 +142,13 @@ func (ctrl *Controller) setPilotManualEnrollmentForFlag(ctx context.Context, new
 	var rm = ctrl.UseCases.RolloutManager
 	switch newEnrollmentStatus {
 	case `whitelisted`:
-		return rm.SetPilotEnrollmentForFeature(ctx, flagID, pilotExtID, true)
+		return rm.SetPilotEnrollmentForFeature(ctx, flagID, "", pilotExtID, true)
 
 	case `blacklisted`:
-		return rm.SetPilotEnrollmentForFeature(ctx, flagID, pilotExtID, false)
+		return rm.SetPilotEnrollmentForFeature(ctx, flagID, "", pilotExtID, false)
 
 	case `undefined`:
-		return rm.UnsetPilotEnrollmentForFeature(ctx, flagID, pilotExtID)
+		return rm.UnsetPilotEnrollmentForFeature(ctx, flagID, "", pilotExtID)
 
 	default:
 		return errors.New(http.StatusText(http.StatusBadRequest))

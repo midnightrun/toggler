@@ -5,9 +5,9 @@ go 1.12
 require (
 	cloud.google.com/go v0.53.0
 	github.com/Pallinder/go-randomdata v1.2.0
-	github.com/adamluzsi/frameless v0.5.0
+	github.com/adamluzsi/frameless v0.5.1
 	github.com/adamluzsi/gorest v0.6.1
-	github.com/adamluzsi/testcase v0.5.2
+	github.com/adamluzsi/testcase v0.7.1
 	github.com/go-openapi/errors v0.19.4
 	github.com/go-openapi/runtime v0.19.15
 	github.com/go-openapi/strfmt v0.19.5
@@ -32,4 +32,5 @@ require (
 	github.com/unrolled/logger v0.0.0-20190327162521-be1a2406c7c9
 	go.mongodb.org/mongo-driver v1.3.2 // indirect
 	golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e // indirect
+	golang.org/x/tools v0.0.0-20200422022333-3d57cf2e726e // indirect
 )

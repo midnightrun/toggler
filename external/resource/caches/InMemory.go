@@ -13,13 +13,14 @@ import (
 	"github.com/adamluzsi/frameless/reflects"
 	"github.com/adamluzsi/frameless/resources"
 
+	"github.com/toggler-io/toggler/domains/deployment"
 	"github.com/toggler-io/toggler/domains/release"
 	"github.com/toggler-io/toggler/domains/security"
 	"github.com/toggler-io/toggler/usecases"
 )
 
 func NewInMemory(s usecases.Storage) *InMemory {
-	c := &InMemory{Storage: s, ttl: 5 * time.Minute,}
+	c := &InMemory{Storage: s, ttl: 5 * time.Minute}
 	c.Start()
 	return c
 }
@@ -152,8 +153,8 @@ func (c *InMemory) namespaceKey(T interface{}) string {
 	switch T.(type) {
 	case release.Flag, *release.Flag:
 		return `release.Flag`
-	case release.Pilot, *release.Pilot:
-		return `release.Pilot`
+	case release.ManualPilotEnrollment, *release.ManualPilotEnrollment:
+		return `release.ManualPilotEnrollment`
 	case release.IPAllow:
 		return `release.IPAllow`
 	case security.Token:
@@ -194,7 +195,6 @@ func (c *InMemory) withLock() func() {
 	c.lock.Lock()
 	return c.lock.Unlock
 }
-
 
 ////////////////////////////////////////// cached actions //////////////////////////////////////////
 
@@ -311,36 +311,36 @@ func (c *InMemory) FindReleaseFlagsByName(ctx context.Context, names ...string) 
 	return iterators.NewSlice(v)
 }
 
-func (c *InMemory) FindReleaseFlagPilotByPilotExternalID(ctx context.Context, flagID, pilotExtID string) (*release.Pilot, error) {
+func (c *InMemory) FindReleasePilotByReleaseFlagAndDeploymentEnvironmentAndExternalID(ctx context.Context, flagID, envID, pilotExtID string) (*release.ManualPilotEnrollment, error) {
 	defer c.withLock()()
-	const namespace = `FindReleaseFlagPilotByPilotExternalID`
+	const namespace = `FindReleasePilotByReleaseFlagAndDeploymentEnvironmentAndExternalID`
 	var key = fmt.Sprintf(`%s|%s`, flagID, pilotExtID)
 	v, err := c.get(namespace, key, func(s setter) error {
-		p, err := c.Storage.FindReleaseFlagPilotByPilotExternalID(ctx, flagID, pilotExtID)
+		p, err := c.Storage.FindReleasePilotByReleaseFlagAndDeploymentEnvironmentAndExternalID(ctx, flagID, "", pilotExtID)
 		if err != nil {
 			return err
 		}
 		s.set(p)
 		return nil
 	})
-	return v.(*release.Pilot), err
+	return v.(*release.ManualPilotEnrollment), err
 }
 
-func (c *InMemory) FindPilotsByFeatureFlag(ctx context.Context, ff *release.Flag) release.PilotEntries {
+func (c *InMemory) FindReleasePilotsByReleaseFlag(ctx context.Context, flag release.Flag) release.PilotEntries {
 	defer c.withLock()()
-	const namespace = `FindPilotsByFeatureFlag`
+	const namespace = `FindReleasePilotsByReleaseFlag`
 
-	if ff == nil {
+	if flag.ID == `` {
 		return iterators.NewEmpty()
 	}
 
-	if id, _ := resources.LookupID(ff); id == `` {
+	if id, _ := resources.LookupID(flag); id == `` {
 		return iterators.NewEmpty()
 	}
 
-	v, err := c.get(namespace, ff.ID, func(s setter) error {
+	v, err := c.get(namespace, flag.ID, func(s setter) error {
 		var pilots []interface{}
-		if err := iterators.Collect(c.Storage.FindPilotsByFeatureFlag(ctx, ff), &pilots); err != nil {
+		if err := iterators.Collect(c.Storage.FindReleasePilotsByReleaseFlag(ctx, flag), &pilots); err != nil {
 			return err
 		}
 		s.set(pilots)
@@ -354,14 +354,14 @@ func (c *InMemory) FindPilotsByFeatureFlag(ctx context.Context, ff *release.Flag
 	return iterators.NewSlice(v)
 }
 
-func (c *InMemory) FindPilotEntriesByExtID(ctx context.Context, pilotExtID string) release.PilotEntries {
+func (c *InMemory) FindReleasePilotsByExternalID(ctx context.Context, pilotExtID string) release.PilotEntries {
 	defer c.withLock()()
 
-	const namespace = `FindPilotEntriesByExtID`
+	const namespace = `FindReleasePilotsByExternalID`
 
 	v, err := c.get(namespace, pilotExtID, func(s setter) error {
 		var pilots []interface{}
-		if err := iterators.Collect(c.Storage.FindPilotEntriesByExtID(ctx, pilotExtID), &pilots); err != nil {
+		if err := iterators.Collect(c.Storage.FindReleasePilotsByExternalID(ctx, pilotExtID), &pilots); err != nil {
 			return err
 		}
 		s.set(pilots)
@@ -374,7 +374,7 @@ func (c *InMemory) FindPilotEntriesByExtID(ctx context.Context, pilotExtID strin
 	return iterators.NewSlice(v)
 }
 
-func (c *InMemory) FindReleaseAllowsByReleaseFlags(ctx context.Context, flags ...release.Flag) release.AllowEntries {
+func (c *InMemory) FindReleaseAllowsByReleaseFlags(ctx context.Context, env deployment.Environment, flags ...release.Flag) release.AllowEntries {
 	defer c.withLock()()
 
 	const namespace = `FindReleaseAllowsByReleaseFlags`
@@ -387,7 +387,7 @@ func (c *InMemory) FindReleaseAllowsByReleaseFlags(ctx context.Context, flags ..
 
 	v, err := c.get(namespace, strings.Join(keys, `|`), func(s setter) error {
 		var allows []interface{}
-		if err := iterators.Collect(c.Storage.FindReleaseAllowsByReleaseFlags(ctx, flags...), &allows); err != nil {
+		if err := iterators.Collect(c.Storage.FindReleaseAllowsByReleaseFlags(ctx, env, flags...), &allows); err != nil {
 			return err
 		}
 		s.set(allows)
@@ -415,4 +415,3 @@ func (c *InMemory) FindTokenBySHA512Hex(ctx context.Context, sha512hex string) (
 	})
 	return v.(*security.Token), err
 }
-

@@ -29,7 +29,7 @@ func TestUseCases_ListFeatureFlags(t *testing.T) {
 	s.When(`there are at least one flag in the system`, func(s *testcase.Spec) {
 		s.Before(func(t *testcase.T) { EnsureFlag(t, `42`, 0) })
 
-		s.Then(`we receive back the feature flag list`, func(t *testcase.T) {
+		s.Then(`we receive back the release flag list`, func(t *testcase.T) {
 			ffs := onSuccess(t)
 			require.Equal(t, 1, len(ffs))
 			require.Equal(t, `42`, ffs[0].Name)

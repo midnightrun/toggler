@@ -7,6 +7,7 @@ import (
 	"github.com/adamluzsi/frameless/iterators"
 	"github.com/adamluzsi/frameless/resources/storages/memorystorage"
 
+	"github.com/toggler-io/toggler/domains/deployment"
 	"github.com/toggler-io/toggler/domains/release"
 	"github.com/toggler-io/toggler/domains/security"
 )
@@ -17,29 +18,11 @@ func NewInMemory() *InMemory {
 
 type InMemory struct{ *memorystorage.Memory }
 
-func (s *InMemory) FindReleaseAllowsByReleaseFlags(ctx context.Context, flags ...release.Flag) release.AllowEntries {
-	var allows []release.IPAllow
+func (s *InMemory) FindReleasePilotsByExternalID(ctx context.Context, pilotExtID string) release.PilotEntries {
+	var pilots []release.ManualPilotEnrollment
 
-	flagIndex := make(map[string]struct{})
-	for _, flag := range flags {
-		flagIndex[flag.ID] = struct{}{}
-	}
-
-	for _, e := range s.TableFor(release.IPAllow{}) {
-		allow := e.(*release.IPAllow)
-		if _, ok := flagIndex[allow.FlagID]; ok {
-			allows = append(allows, *allow)
-		}
-	}
-
-	return iterators.NewSlice(allows)
-}
-
-func (s *InMemory) FindPilotEntriesByExtID(ctx context.Context, pilotExtID string) release.PilotEntries {
-	var pilots []release.Pilot
-
-	for _, e := range s.TableFor(release.Pilot{}) {
-		p := e.(*release.Pilot)
+	for _, e := range s.TableFor(release.ManualPilotEnrollment{}) {
+		p := e.(*release.ManualPilotEnrollment)
 
 		if p.ExternalID == pilotExtID {
 			pilots = append(pilots, *p)
@@ -61,7 +44,7 @@ func (s *InMemory) FindReleaseFlagsByName(ctx context.Context, names ...string) 
 	for _, e := range s.TableFor(release.Flag{}) {
 		flag := e.(*release.Flag)
 
-		if _, ok := nameIndex[flag.Name] ; ok {
+		if _, ok := nameIndex[flag.Name]; ok {
 			flags = append(flags, *flag)
 		}
 	}
@@ -69,15 +52,15 @@ func (s *InMemory) FindReleaseFlagsByName(ctx context.Context, names ...string) 
 	return iterators.NewSlice(flags)
 }
 
-func (s *InMemory) FindPilotsByFeatureFlag(ctx context.Context, ff *release.Flag) frameless.Iterator {
-	table := s.TableFor(release.Pilot{})
+func (s *InMemory) FindReleasePilotsByReleaseFlag(ctx context.Context, flag release.Flag) release.PilotEntries {
+	table := s.TableFor(release.ManualPilotEnrollment{})
 
-	var pilots []release.Pilot
+	var pilots []release.ManualPilotEnrollment
 
 	for _, v := range table {
-		pilot := v.(*release.Pilot)
+		pilot := v.(*release.ManualPilotEnrollment)
 
-		if pilot.FlagID == ff.ID {
+		if pilot.FlagID == flag.ID {
 			pilots = append(pilots, *pilot)
 		}
 	}
@@ -85,13 +68,13 @@ func (s *InMemory) FindPilotsByFeatureFlag(ctx context.Context, ff *release.Flag
 	return iterators.NewSlice(pilots)
 }
 
-func (s *InMemory) FindReleaseFlagPilotByPilotExternalID(ctx context.Context, featureFlagID, externalPilotID string) (*release.Pilot, error) {
-	table := s.TableFor(release.Pilot{})
+func (s *InMemory) FindReleasePilotByReleaseFlagAndDeploymentEnvironmentAndExternalID(ctx context.Context, flagID, envID, pilotExtID string) (*release.ManualPilotEnrollment, error) {
+	table := s.TableFor(release.ManualPilotEnrollment{})
 
 	for _, v := range table {
-		pilot := v.(*release.Pilot)
+		pilot := v.(*release.ManualPilotEnrollment)
 
-		if pilot.FlagID == featureFlagID && pilot.ExternalID == externalPilotID {
+		if pilot.FlagID == flagID && pilot.DeploymentEnvironmentID == envID && pilot.ExternalID == pilotExtID {
 			p := *pilot
 			return &p, nil
 		}
@@ -125,4 +108,16 @@ func (s *InMemory) FindTokenBySHA512Hex(ctx context.Context, t string) (*securit
 	}
 
 	return nil, nil
+}
+
+func (s *InMemory) FindReleaseRolloutByReleaseFlagAndDeploymentEnvironment(ctx context.Context, flag release.Flag, env deployment.Environment, ptr *release.Rollout) (bool, error) {
+	for _, rollout := range s.TableFor(*ptr) {
+		rollout := rollout.(*release.Rollout)
+
+		if rollout.FlagID == flag.ID && rollout.DeploymentEnvironmentID == env.ID {
+			*ptr = *rollout
+			return true, nil
+		}
+	}
+	return false, nil
 }

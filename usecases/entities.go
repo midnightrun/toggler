@@ -11,7 +11,6 @@ import (
 
 func NewUseCases(s Storage) *UseCases {
 	return &UseCases{
-		FlagChecker:    release.NewFlagChecker(s),
 		RolloutManager: release.NewRolloutManager(s),
 		Doorkeeper:     security.NewDoorkeeper(s),
 		Issuer:         security.NewIssuer(s),
@@ -25,7 +24,6 @@ func NewUseCases(s Storage) *UseCases {
 }
 
 type UseCases struct {
-	*release.FlagChecker
 	*release.RolloutManager
 	*security.Doorkeeper
 	*security.Issuer

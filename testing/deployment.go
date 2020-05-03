@@ -14,7 +14,7 @@ func init() {
 		s.Let(ExampleDeploymentEnvironmentLetVar, func(t *testcase.T) interface{} {
 			de := FixtureFactory{}.Create(deployment.Environment{}).(*deployment.Environment)
 			require.Nil(t, ExampleStorage(t).Create(GetContext(t), de))
-			t.Defer(func() { _ = ExampleStorage(t).DeleteByID(GetContext(t), *de, de.ID) })
+			t.Defer(ExampleStorage(t).DeleteByID, GetContext(t), *de, de.ID)
 			return de
 		})
 	})

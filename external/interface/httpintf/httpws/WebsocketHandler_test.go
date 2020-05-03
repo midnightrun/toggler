@@ -73,7 +73,7 @@ func TestWebsocket(t *testing.T) {
 		s.Let(`data`, func(t *testcase.T) interface{} {
 			return httpws.IsFeatureEnabledRequestPayload{
 				Feature: ExampleReleaseFlagName(t),
-				PilotID: GetExternalPilotID(t),
+				PilotID: ExampleExternalPilotID(t),
 			}
 		})
 

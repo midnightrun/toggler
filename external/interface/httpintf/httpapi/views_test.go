@@ -80,7 +80,7 @@ func SpecViewsControllerClientConfig(s *testcase.Spec) {
 			s.Before(func(t *testcase.T) {
 				Query(t).Set(t.I(`feature query string key`).(string), ExampleReleaseFlagName(t))
 				Query(t).Add(t.I(`feature query string key`).(string), `yet-unknown-feature`)
-				Query(t).Set(`external_id`, GetExternalPilotID(t))
+				Query(t).Set(`external_id`, ExampleExternalPilotID(t))
 			})
 
 			s.Context(`is "release_flags"`, func(s *testcase.Spec) {
@@ -102,7 +102,7 @@ func SpecViewsControllerClientConfig(s *testcase.Spec) {
 				payload := bytes.NewBuffer([]byte{})
 				jsonenc := json.NewEncoder(payload)
 				var confReq httpapi.GetPilotConfigRequest
-				confReq.Body.PilotExtID = GetExternalPilotID(t)
+				confReq.Body.PilotExtID = ExampleExternalPilotID(t)
 				confReq.Body.ReleaseFlags = []string{ExampleReleaseFlagName(t), "yet-unknown-feature"}
 				require.Nil(t, jsonenc.Encode(confReq.Body))
 				return payload
@@ -140,6 +140,6 @@ func SpecViewsControllerClientConfig(s *testcase.Spec) {
 
 		require.NotNil(t, resp)
 		require.NotNil(t, resp.Payload)
-		require.Equal(t, GetPilotEnrollment(t), resp.Payload.Release.Flags[ExampleReleaseFlagName(t)])
+		require.Equal(t, ExamplePilot(t).IsParticipating, resp.Payload.Release.Flags[ExampleReleaseFlagName(t)])
 	})
 }

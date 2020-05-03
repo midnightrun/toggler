@@ -16,7 +16,7 @@ type Storage interface {
 	resources.Deleter
 	release.FlagFinder
 	release.PilotFinder
-	release.AllowFinder
+	release.RolloutFinder
 	security.TokenFinder
 	io.Closer
 }

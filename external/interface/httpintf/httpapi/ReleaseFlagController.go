@@ -40,7 +40,7 @@ type ReleaseFlagView struct {
 	ID      string `ext:"ID" json:"id,omitempty"`
 	Name    string `json:"name"`
 	Rollout struct {
-		// RandSeed allows you to configure the randomness for the percentage based pilot enrollment selection.
+		// Seed allows you to configure the randomness for the percentage based pilot enrollment selection.
 		// This value could have been neglected by using the flag name as random seed,
 		// but that would reduce the flexibility for edge cases where you want
 		// to use a similar pilot group as a successful flag rollout before.
@@ -52,7 +52,7 @@ type ReleaseFlagView struct {
 		Strategy struct {
 			// Percentage allows you to define how many of your user base should be enrolled pseudo randomly.
 			Percentage int `json:"percentage"`
-			// DecisionLogicAPI allow you to do rollout based on custom domain needs such as target groups,
+			// URL allow you to do rollout based on custom domain needs such as target groups,
 			// which decision logic is available trough an API endpoint call
 			DecisionLogicAPI *url.URL `json:"decision_logic_api"`
 		} `json:"strategy"`

@@ -16,7 +16,7 @@ import (
 
 type editPageContent struct {
 	Flag   release.Flag
-	Pilots []release.Pilot
+	Pilots []release.ManualPilotEnrollment
 }
 
 func (ctrl *Controller) FlagPage(w http.ResponseWriter, r *http.Request) {
@@ -69,12 +69,13 @@ func (ctrl *Controller) flagAction(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		var pilots []release.Pilot
+		var pilots []release.ManualPilotEnrollment
 
-		if ctrl.handleError(w, r, iterators.Collect(ctrl.UseCases.RolloutManager.Storage.FindPilotsByFeatureFlag(r.Context(), &ff), &pilots)) {
+		if ctrl.handleError(w, r, iterators.Collect(ctrl.UseCases.RolloutManager.Storage.FindReleasePilotsByReleaseFlag(r.Context(), ff), &pilots)) {
 			return
 		}
 
+		//FIXME update template with deployment environment
 		ctrl.Render(w, `/flag/show.html`, editPageContent{Flag: ff, Pilots: pilots})
 
 	case http.MethodPost:
@@ -165,7 +166,7 @@ func (ctrl *Controller) flagSetPilotAction(w http.ResponseWriter, r *http.Reques
 			return
 		}
 
-		if ctrl.handleError(w, r, ctrl.UseCases.RolloutManager.SetPilotEnrollmentForFeature(r.Context(), p.FlagID, p.ExternalID, p.Enrolled)) {
+		if ctrl.handleError(w, r, ctrl.UseCases.RolloutManager.SetPilotEnrollmentForFeature(r.Context(), p.FlagID, "", p.ExternalID, p.IsParticipating)) {
 			return
 		}
 
@@ -185,7 +186,7 @@ func (ctrl *Controller) flagUnsetPilotAction(w http.ResponseWriter, r *http.Requ
 	featureFlagID := r.FormValue(`pilot.flagID`)
 	pilotExternalID := r.FormValue(`pilot.extID`)
 
-	err := ctrl.UseCases.RolloutManager.UnsetPilotEnrollmentForFeature(r.Context(), featureFlagID, pilotExternalID)
+	err := ctrl.UseCases.RolloutManager.UnsetPilotEnrollmentForFeature(r.Context(), featureFlagID, "", pilotExternalID)
 
 	if ctrl.handleError(w, r, err) {
 		return

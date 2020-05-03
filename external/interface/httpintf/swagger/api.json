@@ -515,7 +515,7 @@
           "type": "object",
           "properties": {
             "rand_seed_salt": {
-              "description": "RandSeed allows you to configure the randomness for the percentage based pilot enrollment selection.\nThis value could have been neglected by using the flag name as random seed,\nbut that would reduce the flexibility for edge cases where you want\nto use a similar pilot group as a successful flag rollout before.",
+              "description": "Seed allows you to configure the randomness for the percentage based pilot enrollment selection.\nThis value could have been neglected by using the flag name as random seed,\nbut that would reduce the flexibility for edge cases where you want\nto use a similar pilot group as a successful flag rollout before.",
               "type": "integer",
               "format": "int64",
               "x-go-name": "RandSeed"
@@ -550,7 +550,7 @@
           "type": "string"
         },
         "enrolled": {
-          "description": "Enrolled states that whether the Pilot for the given feature is enrolled, or blacklisted",
+          "description": "IsParticipating states that whether the ManualPilotEnrollment for the given feature is enrolled, or blacklisted",
           "type": "boolean",
           "x-go-name": "Enrolled"
         },

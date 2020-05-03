@@ -124,11 +124,11 @@ func (r *Redis) Update(ctx context.Context, ptr interface{}) error {
 //	panic("implement me")
 //}
 //
-//func (*Redis) FindReleaseFlagPilotByPilotExternalID(ctx context.Context, FlagID, ExternalPilotID string) (*rollouts.Pilot, error) {
+//func (*Redis) FindReleasePilotByReleaseFlagAndDeploymentEnvironmentAndExternalID(ctx context.Context, FlagID, ExternalPilotID string) (*rollouts.Pilot, error) {
 //	panic("implement me")
 //}
 //
-//func (*Redis) FindPilotsByFeatureFlag(ctx context.Context, ff *rollouts.FeatureFlag) frameless.Iterator {
+//func (*Redis) FindReleasePilotsByReleaseFlag(ctx context.Context, ff *rollouts.FeatureFlag) frameless.Iterator {
 //	panic("implement me")
 //}
 //

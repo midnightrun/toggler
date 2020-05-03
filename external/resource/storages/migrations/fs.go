@@ -213,7 +213,7 @@ var _escData = map[string]*_escFile{
 		name:    "fs.go",
 		local:   "migrations/fs.go",
 		size:    0,
-		modtime: 1586915480,
+		modtime: 1587738255,
 		compressed: `
 H4sIAAAAAAAC/wEAAP//AAAAAAAAAAA=
 `,
@@ -260,7 +260,7 @@ rShJLcpLzInPTFGy5gJrD3F08nFVUILoU7LmAgQAAP//3ZtLD1QAAAA=
 		name:    "1562536633_create_pilots_table.up.sql",
 		local:   "migrations/postgres/1562536633_create_pilots_table.up.sql",
 		size:    373,
-		modtime: 1586914005,
+		modtime: 1587732116,
 		compressed: `
 H4sIAAAAAAAC/4SQwWoDIRCG7z7FkFMCeYOcTCJFkJEmCrkNbtcUqdWt60L79qW7S9kuLfXi5Zv5v/lP
 F8GNAMOPSsCmCzHXfsO2DAAgtPDjWSvPXz9qA2iV2o/U3bs6FE/36J4ptH9Q/r36klykeakRN/MLlUqO
@@ -383,6 +383,103 @@ hip9wzA+hDcyuP+mtSy2hrai4a6GjujfUwjI0l9eqF8AAAD//yK0toP1AAAA
 `,
 	},
 
+	"/migrations/postgres/1587677201_create_deployment_environment_table.down.sql": {
+		name:    "1587677201_create_deployment_environment_table.down.sql",
+		local:   "migrations/postgres/1587677201_create_deployment_environment_table.down.sql",
+		size:    84,
+		modtime: 1587736269,
+		compressed: `
+H4sIAAAAAAAC/3IJ8g9Q8PRzcY1QSMvMS4lPSS3Iya/MTc0riU/NK8ssys8Ds5Mq4/MSc1OtucDqQxyd
+fFwVsCsttuYCBAAA////dG5tVAAAAA==
+`,
+	},
+
+	"/migrations/postgres/1587677201_create_deployment_environment_table.up.sql": {
+		name:    "1587677201_create_deployment_environment_table.up.sql",
+		local:   "migrations/postgres/1587677201_create_deployment_environment_table.up.sql",
+		size:    209,
+		modtime: 1587736906,
+		compressed: `
+H4sIAAAAAAAC/3SOwQqCQBCG7/sU/1GhN/BkOcSSjWU7oKclcQIh1zAJfPtQgi51m8M33/fvSkodwaXb
+nNDq4z7MvYbJa3h14xCW+2kiAwBdC0DEZuDCgSXPcSrtMS1rHKjerEy49gpHlfsywvYsZOLEmE/MckYV
+bl1o/e+ib2a/mFZlwf92QS6W92imURXR8hAn5h0AAP//FFdthtEAAAA=
+`,
+	},
+
+	"/migrations/postgres/1587677300_create_rollouts_table.down.sql": {
+		name:    "1587677300_create_rollouts_table.down.sql",
+		local:   "migrations/postgres/1587677300_create_rollouts_table.down.sql",
+		size:    104,
+		modtime: 1587677742,
+		compressed: `
+H4sIAAAAAAAC/3IJ8g9Q8PRzcY1QSMvMS4kvSs1JTSxOjS/Kz8nJLy2JT6qEC6XlJKbHJ+alxKekFuTk
+V+am5pXEp+aVZRbl54HY1lxgs0IcnXxcFdCMKbYGBAAA//9LzeZsaAAAAA==
+`,
+	},
+
+	"/migrations/postgres/1587677300_create_rollouts_table.up.sql": {
+		name:    "1587677300_create_rollouts_table.up.sql",
+		local:   "migrations/postgres/1587677300_create_rollouts_table.up.sql",
+		size:    287,
+		modtime: 1587680292,
+		compressed: `
+H4sIAAAAAAAC/2yPzWqFMBCF93mKWSr4Bq5sDSWtjUUN1FWIZCyBNJHoFXz7i7ki3J/ZzDDfgXPOe0OL
+jkJXvFUUAlpUM8rgrfWXZSYJAQAwGuIIwUrgdQdcVBX8NOy7aHr4on0WZaNVf9Loe9kNoVt38gpNVrl9
+f7Y1PxFJc0KOaIyX9BdG47R8yCeH7XxFc+W01DhZv/2jWyS61QTv9jta1fypIYiW8Q8YloAIydEgO/Km
+ObkGAAD//w8Ri78fAQAA
+`,
+	},
+
+	"/migrations/postgres/1587677487_migrate_deployment_environment.down.sql": {
+		name:    "1587677487_migrate_deployment_environment.down.sql",
+		local:   "migrations/postgres/1587677487_migrate_deployment_environment.down.sql",
+		size:    173,
+		modtime: 1587736955,
+		compressed: `
+H4sIAAAAAAAC/0zMsWqEMBwH4D1P8eO/OAW0VaNIB1tTOsRagqWjpCZCwItyesK9/XHT3fZNH+ewbjKX
+eYd167xcTy7scOHw5yXczWrVS42+flcStPp52TdiANDo7gcfnfptv0EuHIO3VDHWSCV7yT5114Ie5/B0
+bsT+vqSWIG8Jb4iEmJLyVWQ8FmnG0+S/4Ma+pLzMyjguRpPnZowqdgsAAP//rToYga0AAAA=
+`,
+	},
+
+	"/migrations/postgres/1587677487_migrate_deployment_environment.up.sql": {
+		name:    "1587677487_migrate_deployment_environment.up.sql",
+		local:   "migrations/postgres/1587677487_migrate_deployment_environment.up.sql",
+		size:    457,
+		modtime: 1587738236,
+		compressed: `
+H4sIAAAAAAAC/4yQUWvyMBSG7/MrXnJTBSP6fWoV2UVmjqwQ29Ek2+6kMxEKWst0wv79sDo3diHLVcJ7
+8j4PRwj4sC7eNwf4UG92H9tQHRCqY/m2q053lqSGcosktRn498zyx8yeo8VLzzvgVbENvM2epHZk0Iri
+eN2f/I+HohcPhmLQfx2Lwv8biMlw0uuNV8VoVKyiDqKLRNSeMia1pRxW3msCr8vN7rDnDACkUphl2i1S
+8FAdl6XncC5RSDOL1GkNRXPptMXfuDdZTfCbpvLs8QsyZUyRJktsnmeLG7uRBp49P1BOjSi9JMaaVkM5
+HUOaZvb6PJddVE5/62t07qi7ZxvcwXdL36Tt6WcAAAD//3QkkLTJAQAA
+`,
+	},
+
+	"/migrations/postgres/1587677731_refact.down.sql": {
+		name:    "1587677731_refact.down.sql",
+		local:   "migrations/postgres/1587677731_refact.down.sql",
+		size:    288,
+		modtime: 1587736641,
+		compressed: `
+H4sIAAAAAAAC/5SOwY6CMBCG732KP3PaTXgDTl3ogQTa3W45N1WLaVKLQkl8fANRr+pxvvnmy/DWCA3D
+f1oBmnz0bvb2HOKYZ2IAUGv1i0rJf6N5Iw1oW9olhYvdj6ddSC6HMVGx2byu35HRy+avF/iiIbqjDQcq
+QP6a/ZRcXMfvkrGXr2kheSdQqbbvJJ4pGAUavMvL5O0DftBbz++4ZLcAAAD//6NmkRAgAQAA
+`,
+	},
+
+	"/migrations/postgres/1587677731_refact.up.sql": {
+		name:    "1587677731_refact.up.sql",
+		local:   "migrations/postgres/1587677731_refact.up.sql",
+		size:    298,
+		modtime: 1587736616,
+		compressed: `
+H4sIAAAAAAAC/4yOzY6CMBSF932Km7uaSXgDVh3oggTamU5ZN1UvpkktCsX4+EYCRl2xOyfnJx+vjdBg
++E8tAM8+9GlEBgCgheSNAKMABwrkRrJLnDP2tvqIX9eFqttGAnbk0jSQ7YI7Wn/A+XY1W/5KrX6hUPLf
+aF5Js6DaKfqL3fennY8u+T5iNrd5WW4pQyurv1bA1xMlA6R4XdUt0RBdeNjvnN0DAAD//6AMCTUqAQAA
+`,
+	},
+
 	"/migrations": {
 		name:  "migrations",
 		local: `./migrations`,
@@ -418,5 +515,13 @@ var _escDirs = map[string][]os.FileInfo{
 		_escData["/migrations/postgres/1568143862_alter_table_release_flags.up.sql"],
 		_escData["/migrations/postgres/1570774790_create_release_allows_table.down.sql"],
 		_escData["/migrations/postgres/1570774790_create_release_allows_table.up.sql"],
+		_escData["/migrations/postgres/1587677201_create_deployment_environment_table.down.sql"],
+		_escData["/migrations/postgres/1587677201_create_deployment_environment_table.up.sql"],
+		_escData["/migrations/postgres/1587677300_create_rollouts_table.down.sql"],
+		_escData["/migrations/postgres/1587677300_create_rollouts_table.up.sql"],
+		_escData["/migrations/postgres/1587677487_migrate_deployment_environment.down.sql"],
+		_escData["/migrations/postgres/1587677487_migrate_deployment_environment.up.sql"],
+		_escData["/migrations/postgres/1587677731_refact.down.sql"],
+		_escData["/migrations/postgres/1587677731_refact.up.sql"],
 	},
 }
